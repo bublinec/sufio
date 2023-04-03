@@ -16,13 +16,15 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#003E9C',
+          DEFAULT: '#6266F0',
         },
         'error': {
-          DEFAULT: colors.red[700],
+          DEFAULT: colors.red[600],
         },
-        'text-primary': '#011C27',
-        'text-secondary': '#9CA3AF',
+        "background": "#FFFEFE",
+        'background-gray': "#F2F4F7",
+        'text-primary': '#111626',
+        'text-secondary': '#4B5563',
       },
     },
   },
