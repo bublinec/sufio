@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import { ButtonHTMLAttributes } from 'react';
 
 export interface ButtonProps {
-  className?: string;
   children?: React.ReactNode | React.ReactNode[];
   isLoading?: boolean;
   loadingText?: string;
@@ -19,18 +18,11 @@ border-2 border-primary flex items-center justify-center space-x-3`;
 const disabledStyles = `opacity-50`;
 
 export const Button = (props: ButtonProps) => {
-  const {
-    disabled,
-    children,
-    className,
-    isLoading,
-    loadingText,
-    ...buttonProps
-  } = props;
+  const { disabled, children, isLoading, loadingText, ...buttonProps } = props;
   return (
     <button
       disabled={disabled}
-      className={clsx([defaultStyles, disabled && disabledStyles, className])}
+      className={clsx([defaultStyles, disabled && disabledStyles])}
       {...buttonProps}
     >
       {isLoading ? loadingText : children}
