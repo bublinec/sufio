@@ -13,7 +13,7 @@ const Template: ComponentStory<typeof Container> = (args) => (
 export const Primary = Template.bind({});
 Primary.args = {
   children: (
-    <div className="bg-background-gray h-screen w-full flex items-center justify-center">
+    <div className="bg-light-gray h-screen w-full flex items-center justify-center">
       Main content
     </div>
   ),
