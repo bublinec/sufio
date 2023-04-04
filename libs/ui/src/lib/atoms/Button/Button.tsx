@@ -11,9 +11,9 @@ export interface ButtonProps {
   onClick?: ButtonHTMLAttributes<HTMLButtonElement>['onClick'];
 }
 
-const defaultStyles = `px-6 py-2 text-sm tracking-wider transition-all duration-300 ease-in-out rounded-md 
-bg-primary text-white hover:bg-primary/90 active:bg-primary/80 shadow-primary/30
-border-2 border-primary flex items-center justify-center space-x-3`;
+const defaultStyles = `px-6 py-2 text-xs tracking-wider transition-all duration-300 ease-in-out rounded-md 
+bg-primary text-white hover:bg-primary/90 active:bg-primary/80 shadow-primary/30 shadow-sm hover:shadow-md
+border-2 border-primary flex items-center justify-center space-x-3 font-semibold`;
 
 const disabledStyles = `opacity-50`;
 
