@@ -27,8 +27,15 @@ module.exports = {
         'light-gray': "#F2F4F7",
         'dark-gray': '#CDCCCD',
       },
-
-    },
+      padding: {
+        'page': '4rem',
+        'page-desktop': '6rem',
+      },
+      gap: {
+        'page': '4rem',
+        'page-desktop': '6rem',
+      }
+    }
   },
   plugins: [],
 };

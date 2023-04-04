@@ -9,5 +9,7 @@ export const SectionHeader = (props: SectionHeaderProps) => {
   const { title, as = 'h2' } = props;
   const HeaderTag = as;
 
-  return <HeaderTag className="text-3xl font-medium">{title}</HeaderTag>;
+  return (
+    <HeaderTag className="text-3xl md:text-4xl font-medium">{title}</HeaderTag>
+  );
 };

@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { ReactNode } from 'react';
+import { Container } from '../Container/Container';
 import {
   SectionHeader,
   SectionHeaderProps,
@@ -16,12 +17,12 @@ export const Section = (props: SectionProps) => {
   return (
     <section
       className={clsx(
-        `flex flex-col gap-12 md:gap-16`,
+        `flex flex-col gap-12 md:gap-16 w-full`,
         align === 'center' ? 'items-center' : 'items-start'
       )}
     >
       {header ? <SectionHeader {...header} /> : null}
-      {props.children}
+      <Container>{props.children}</Container>
     </section>
   );
 };
