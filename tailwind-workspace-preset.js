@@ -22,10 +22,12 @@ module.exports = {
           DEFAULT: colors.red[600],
         },
         "background": "#FFFEFE",
-        'background-gray': "#F2F4F7",
         'text-primary': '#111626',
         'text-secondary': '#4B5563',
+        'light-gray': "#F2F4F7",
+        'dark-gray': '#CDCCCD',
       },
+
     },
   },
   plugins: [],

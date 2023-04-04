@@ -11,5 +11,14 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: 'Button',
+  children: 'Primary Button',
+  loadingText: 'Loading...',
+  onClick: () => console.log('Primary Button Clicked'),
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  children: 'Primary Button',
+  isLoading: true,
+  loadingText: 'Loading...',
 };
