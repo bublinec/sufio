@@ -19,7 +19,7 @@ export const ProductCard = (props: ProductCardProps) => {
   const { name, price, priceUnit, image, size, buttonLabel } = props;
 
   return (
-    <div className={`flex flex-col gap-3`}>
+    <article className={`flex flex-col gap-3`}>
       <div className="w-full h-56 object-cover rounded-md bg-dark-gray overflow-hidden">
         {image ? (
           <img
@@ -40,6 +40,6 @@ export const ProductCard = (props: ProductCardProps) => {
           <Button>{buttonLabel}</Button>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
