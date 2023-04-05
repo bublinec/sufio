@@ -13,10 +13,11 @@ export interface ProductCardProps {
     width: number;
     height: number;
   };
+  onClick?: () => void;
 }
 
 export const ProductCard = (props: ProductCardProps) => {
-  const { name, price, priceUnit, image, size, buttonLabel } = props;
+  const { name, price, priceUnit, image, size, buttonLabel, onClick } = props;
 
   return (
     <article className={`flex flex-col gap-2`}>
@@ -37,7 +38,7 @@ export const ProductCard = (props: ProductCardProps) => {
           <p className="text-sm">
             {price} {priceUnit}
           </p>
-          <Button>{buttonLabel}</Button>
+          <Button onClick={onClick}>{buttonLabel}</Button>
         </div>
       </div>
     </article>

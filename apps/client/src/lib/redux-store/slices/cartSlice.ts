@@ -1,17 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Cart, CartItem } from '@sufio/models';
 
-export interface CartItem {
-  id: number;
-  name: string;
-  price: number;
-}
-
-export interface CartState {
-  items: CartItem[];
-  total: number;
-}
-
-const initialState: CartState = {
+const initialState: Cart = {
   items: [],
   total: 0,
 };
@@ -21,17 +11,29 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action: PayloadAction<CartItem>) => {
-      state.items.push(action.payload);
-      state.total += action.payload.price;
+      const existingItem = state.items.find((item) => item.product.id === action.payload.product.id);
+      if (existingItem) {
+        existingItem.quantity += action.payload.quantity;
+      } else {
+        state.items.push(action.payload);
+      }
+      state.total += action.payload.product.unit_price_incl_vat * action.payload.quantity;
     },
+
     removeItem: (state, action: PayloadAction<number>) => {
-      const itemToRemove = state.items.find((item) => item.id === action.payload);
-      state.items = state.items.filter((item) => item.id !== action.payload);
-      state.total -= itemToRemove?.price || 0;
+      const itemToRemove = state.items.find((item) => item.product.id === action.payload);
+      if (itemToRemove) {
+        state.total -= itemToRemove.product.unit_price_incl_vat * itemToRemove.quantity;
+        if (itemToRemove.quantity > 1) {
+          itemToRemove.quantity -= 1;
+        } else {
+          state.items = state.items.filter((item) => item.product.id !== action.payload);
+        }
+      }
     },
   },
 });
 
 export const { addItem, removeItem } = cartSlice.actions;
 
-export default cartSlice
+export default cartSlice;
