@@ -1,8 +1,7 @@
 import { useProductsQuery } from '@sufio/data-access';
 import { Product } from '@sufio/models';
 import { ProductCard, ProductCardSkeleton, Section } from '@sufio/ui';
-import { useDispatch } from 'react-redux';
-import { addItem } from '../../lib/redux-store/slices/cartSlice';
+import { useAddToCart } from './hooks/useAddToCart';
 import { mapProductToProductCard } from './utils/mapProductToProductCard';
 
 export interface ProductsSectionProps {}
@@ -10,16 +9,8 @@ export interface ProductsSectionProps {}
 export const ProductsSection = (props: ProductsSectionProps) => {
   const { data: productsData, isLoading: isLoadingProducts } =
     useProductsQuery();
-  const dispatch = useDispatch();
 
-  const handleAddToCart = (product: Product) => {
-    dispatch(
-      addItem({
-        product: product,
-        quantity: 1,
-      })
-    );
-  };
+  const addToCart = useAddToCart();
 
   return (
     <Section header={{ title: 'Products' }}>
@@ -31,7 +22,7 @@ export const ProductsSection = (props: ProductsSectionProps) => {
           : productsData?.map((product: Product) => {
               return (
                 <ProductCard
-                  onClick={() => handleAddToCart(product)}
+                  onClick={() => addToCart(product)}
                   key={product.id}
                   {...mapProductToProductCard(product)}
                 />

@@ -1,18 +1,14 @@
 import { Button } from '../../atoms';
+import { Image } from '../../models/image';
+import { Size } from '../../models/size';
 
 export interface ProductCardProps {
   name: string;
   price: number;
   priceUnit: string;
   buttonLabel: string;
-  image?: {
-    url: string;
-    alt: string;
-  };
-  size: {
-    width: number;
-    height: number;
-  };
+  image?: Image;
+  size: Size;
   onClick?: () => void;
 }
 
