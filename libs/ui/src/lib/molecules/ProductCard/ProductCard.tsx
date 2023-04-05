@@ -1,22 +1,19 @@
 import { Button } from '../../atoms';
+import { Image } from '../../models/image';
+import { Size } from '../../models/size';
 
 export interface ProductCardProps {
   name: string;
   price: number;
   priceUnit: string;
   buttonLabel: string;
-  image?: {
-    url: string;
-    alt: string;
-  };
-  size: {
-    width: number;
-    height: number;
-  };
+  image?: Image;
+  size: Size;
+  onClick?: () => void;
 }
 
 export const ProductCard = (props: ProductCardProps) => {
-  const { name, price, priceUnit, image, size, buttonLabel } = props;
+  const { name, price, priceUnit, image, size, buttonLabel, onClick } = props;
 
   return (
     <article className={`flex flex-col gap-2`}>
@@ -37,7 +34,7 @@ export const ProductCard = (props: ProductCardProps) => {
           <p className="text-sm">
             {price} {priceUnit}
           </p>
-          <Button>{buttonLabel}</Button>
+          <Button onClick={onClick}>{buttonLabel}</Button>
         </div>
       </div>
     </article>
