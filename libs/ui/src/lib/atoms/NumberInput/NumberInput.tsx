@@ -1,10 +1,10 @@
 export interface NumberInputProps {
   name: string;
-  min: number;
-  max: number;
-  step: number;
   value: number;
   onChange: (value: number) => void;
+  min?: number;
+  max?: number;
+  step?: number;
   label?: string;
   helpText?: string;
 }

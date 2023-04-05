@@ -19,7 +19,14 @@ const cartSlice = createSlice({
       }
       state.total += action.payload.product.unit_price_incl_vat * action.payload.quantity;
     },
-
+    updateItemQuantity: (state, action: PayloadAction<CartItem>) => {
+      const itemToUpdate = state.items.find((item) => item.product.id === action.payload.product.id);
+      if (itemToUpdate) {
+        state.total -= itemToUpdate.product.unit_price_incl_vat * itemToUpdate.quantity;
+        itemToUpdate.quantity = action.payload.quantity;
+        state.total += itemToUpdate.product.unit_price_incl_vat * itemToUpdate.quantity;
+      }
+    },
     removeItem: (state, action: PayloadAction<number>) => {
       const itemToRemove = state.items.find((item) => item.product.id === action.payload);
       if (itemToRemove) {
@@ -34,6 +41,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addItem, removeItem } = cartSlice.actions;
+export const { addItem, removeItem, updateItemQuantity } = cartSlice.actions;
 
 export default cartSlice;

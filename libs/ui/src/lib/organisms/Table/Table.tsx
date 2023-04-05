@@ -38,8 +38,6 @@ export const Table = (props: TableProps) => {
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
           {data.map((row) => {
-            console.log(row);
-
             return (
               <tr key={row.id}>
                 {columns.map((column) => (

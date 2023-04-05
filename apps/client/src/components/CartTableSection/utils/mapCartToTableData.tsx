@@ -1,7 +1,7 @@
-import { Cart } from "@sufio/models"
-import { formatPrice } from "@sufio/utils";
-import { getCartTotals } from "./getCartTotals";
-
+import { Cart } from '@sufio/models';
+import { formatPrice } from '@sufio/utils';
+import { ProductQuantityController } from '../../ProductQuantityController/ProductQuantityController';
+import { getCartTotals } from './getCartTotals';
 
 export const mapCartToTableData = (cart: Cart) => {
   const data = cart.items.map((item) => {
@@ -13,14 +13,14 @@ export const mapCartToTableData = (cart: Cart) => {
     return {
       id: product.id,
       Product: product.name,
-      Quantity: quantity,
+      Quantity: <ProductQuantityController productId={product.id} />,
       'Unit Price incl. VAT': formatPrice(product.unit_price_incl_vat),
       VAT: vatFormatted,
       Total: formatPrice(totalPrice),
     };
   });
 
-  const totalsData = getCartTotals(cart)
+  const totalsData = getCartTotals(cart);
 
   return [...data, ...totalsData];
-}
+};
