@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Solid = Template.bind({});
 Solid.args = {
   children: 'Solid Button',
-  size: 'md',
+  size: 'lg',
 };
 
 export const Outline = Template.bind({});

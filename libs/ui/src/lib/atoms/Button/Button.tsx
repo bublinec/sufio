@@ -17,18 +17,18 @@ export interface ButtonProps {
 }
 
 const defaultStyles =
-  'px-6 py-2 text-xs tracking-wider transition-all duration-300 ease-in-out rounded-md border-2 flex items-center justify-center space-x-3 font-semibold';
+  'px-6 py-2 tracking-wider transition-all duration-300 ease-in-out rounded-md border-2 flex items-center justify-center space-x-3 font-semibold';
 const solidStyles =
-  'bg-primary text-white border-primary shadow-primary/30 hover:shadow-md';
+  'bg-primary text-white border-primary shadow-primary/30 hover:shadow-md hover:bg-primary/95 active:bg-primary/90';
 const outlineStyles =
   'text-primary border-primary hover:bg-primary/10 active:bg-primary/20 shadow-primary/20 hover:shadow-md';
 const linkStyles =
-  'text-primary hover:text-primary/80 active:text-primary/60 border-none';
+  'text-primary hover:text-primary/80 active:text-primary/60 border-none px-1';
 
 const sizeClasses = {
   sm: 'px-3 py-1 text-xs',
   md: 'px-6 py-2 text-xs',
-  lg: 'px-8 py-3 text-base',
+  lg: 'px-8 py-3 text-sm',
 };
 
 export const Button = (props: ButtonProps) => {
