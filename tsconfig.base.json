@@ -17,7 +17,8 @@
     "paths": {
       "@sufio/data-access": ["libs/data-access/src/index.ts"],
       "@sufio/models": ["libs/models/src/index.ts"],
-      "@sufio/ui": ["libs/ui/src/index.ts"]
+      "@sufio/ui": ["libs/ui/src/index.ts"],
+      "@sufio/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

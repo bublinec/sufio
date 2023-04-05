@@ -1,24 +1,55 @@
-import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { FaArrowLeft } from '@react-icons/all-files/fa/FaArrowLeft';
+import { MdAdd } from '@react-icons/all-files/md/MdAdd';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Button } from './Button';
 
-const Story: ComponentMeta<typeof Button> = {
+export default {
   component: Button,
-};
-export default Story;
+} as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  children: 'Primary Button',
-  loadingText: 'Loading...',
-  onClick: () => console.log('Primary Button Clicked'),
+export const Solid = Template.bind({});
+Solid.args = {
+  children: 'Solid Button',
+  size: 'lg',
+};
+
+export const Outline = Template.bind({});
+Outline.args = {
+  children: 'Outline Button',
+  variant: 'outline',
+};
+
+export const Link = Template.bind({});
+Link.args = {
+  children: 'Link Button',
+  variant: 'link',
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: 'Disabled Button',
+  disabled: true,
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
-  children: 'Primary Button',
+  children: 'Loading Button',
   isLoading: true,
   loadingText: 'Loading...',
+};
+
+export const IconLeft = Template.bind({});
+IconLeft.args = {
+  children: 'Back',
+  variant: 'link',
+  iconLeft: <FaArrowLeft />,
+};
+
+export const IconRight = Template.bind({});
+IconRight.args = {
+  children: 'Button with Icon Right',
+  iconRight: <MdAdd />,
 };

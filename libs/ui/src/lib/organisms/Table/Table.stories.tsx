@@ -2,41 +2,23 @@ import { Meta, Story } from '@storybook/react';
 import { Table, TableProps } from './Table';
 
 export default {
-  title: 'Components/Table',
   component: Table,
 } as Meta;
 
 const Template: Story<TableProps> = (args) => <Table {...args} />;
 
-export const BasicTable = Template.bind({});
-BasicTable.args = {
-  columns: ['Name', 'Age', 'Country'],
-  rowKey: 'Name',
-  data: [
-    {
-      Name: 'John',
-      Age: 25,
-      Country: 'USA',
-    },
-    {
-      Name: 'Jane',
-      Age: 32,
-      Country: 'Canada',
-    },
-    {
-      Name: 'Peter',
-      Age: 42,
-      Country: 'UK',
-    },
-  ],
-};
-
 export const LargeTable = Template.bind({});
 LargeTable.args = {
-  columns: ['Name', 'Email', 'Phone', 'City', 'Country'],
-  rowKey: 'Email',
+  columns: [
+    { key: 'Name', align: 'left' },
+    { key: 'Email', align: 'left' },
+    { key: 'Phone', align: 'center' },
+    { key: 'City', align: 'center' },
+    { key: 'Country', align: 'center' },
+  ],
   data: [
     {
+      id: '1',
       Name: 'John Doe',
       Email: 'johndoe@example.com',
       Phone: '555-555-5555',
@@ -44,6 +26,7 @@ LargeTable.args = {
       Country: 'USA',
     },
     {
+      id: '2',
       Name: 'Jane Smith',
       Email: 'janesmith@example.com',
       Phone: '555-555-5555',
@@ -51,6 +34,7 @@ LargeTable.args = {
       Country: 'Canada',
     },
     {
+      id: '3',
       Name: 'Peter Parker',
       Email: 'peterparker@example.com',
       Phone: '555-555-5555',
@@ -58,6 +42,7 @@ LargeTable.args = {
       Country: 'UK',
     },
     {
+      id: '4',
       Name: 'Bruce Wayne',
       Email: 'brucewayne@example.com',
       Phone: '555-555-5555',
@@ -65,11 +50,43 @@ LargeTable.args = {
       Country: 'USA',
     },
     {
+      id: '5',
       Name: 'Tony Stark',
       Email: 'tonystark@example.com',
       Phone: '555-555-5555',
       City: 'Malibu',
       Country: 'USA',
+    },
+  ],
+};
+
+const SmallTableTemplate: Story<TableProps> = (args) => <Table {...args} />;
+
+export const SmallTable = SmallTableTemplate.bind({});
+SmallTable.args = {
+  columns: [
+    { key: 'Name', align: 'left' },
+    { key: 'Email', align: 'center' },
+    { key: 'Phone', align: 'center' },
+  ],
+  data: [
+    {
+      id: 1,
+      Name: 'John Doe',
+      Email: 'johndoe@example.com',
+      Phone: '555-555-5555',
+    },
+    {
+      id: 2,
+      Name: 'Jane Smith',
+      Email: 'janesmith@example.com',
+      Phone: '555-555-5555',
+    },
+    {
+      id: 3,
+      Name: 'Peter Parker',
+      Email: 'peterparker@example.com',
+      Phone: '555-555-5555',
     },
   ],
 };

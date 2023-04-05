@@ -1,7 +1,7 @@
 import { useProductsQuery } from '@sufio/data-access';
 import { Product } from '@sufio/models';
 import { ProductCard, ProductCardSkeleton, Section } from '@sufio/ui';
-import { useAddToCart } from './hooks/useAddToCart';
+import { useAddToCart } from '../../lib/redux-store/hooks/useAddToCart';
 import { mapProductToProductCard } from './utils/mapProductToProductCard';
 
 export interface ProductsSectionProps {}
