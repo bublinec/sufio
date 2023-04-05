@@ -14,29 +14,32 @@ interface Row {
 export interface TableProps {
   columns: Column[];
   data: Row[];
+  hideHeader?: boolean;
 }
 
 export const Table = (props: TableProps) => {
-  const { columns, data } = props;
+  const { columns, data, hideHeader } = props;
 
   return (
     <div className={`w-full overflow-auto`}>
       <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-light-gray">
-          <tr>
-            {columns.map((column) => (
-              <th
-                key={column.key}
-                scope="col"
-                className={`px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider ${
-                  column.align ? `text-${column.align}` : ''
-                }`}
-              >
-                {column.key}
-              </th>
-            ))}
-          </tr>
-        </thead>
+        {hideHeader ? null : (
+          <thead className="bg-light-gray">
+            <tr>
+              {columns.map((column) => (
+                <th
+                  key={column.key}
+                  scope="col"
+                  className={`px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider ${
+                    column.align ? `text-${column.align}` : ''
+                  }`}
+                >
+                  {column.key}
+                </th>
+              ))}
+            </tr>
+          </thead>
+        )}
         <tbody className="bg-white divide-y divide-gray-200 ">
           {data.map((row) => {
             return (

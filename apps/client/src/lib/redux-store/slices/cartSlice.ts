@@ -37,8 +37,14 @@ const cartSlice = createSlice({
         state.items = state.items.filter((item) => item.product.id !== action.payload);
       }
     },
+    // clear cart
+    clearCart: (state) => {
+      state.items = [];
+      state.total = 0;
+    }
   },
 });
 
-export const { addItem, removeItem, updateItemQuantity } = cartSlice.actions;
+export const { addItem, removeItem, updateItemQuantity, clearCart } = cartSlice.actions;
+
 export default cartSlice;

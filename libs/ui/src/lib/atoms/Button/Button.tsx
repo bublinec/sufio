@@ -28,7 +28,7 @@ const linkStyles =
 const sizeClasses = {
   sm: 'px-3 py-1 text-xs',
   md: 'px-6 py-2 text-xs',
-  lg: 'px-8 py-3 text-sm',
+  lg: 'px-8 py-3 text-md',
 };
 
 export const Button = (props: ButtonProps) => {

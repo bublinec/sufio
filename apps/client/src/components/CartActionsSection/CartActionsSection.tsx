@@ -1,15 +1,12 @@
 import { FaArrowLeft } from '@react-icons/all-files/fa/FaArrowLeft';
 import { Button, Section } from '@sufio/ui';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useHandlePlaceOrder } from '../../lib/order/useHandlePlaceOrder';
 
 export interface CartActionsSectionProps {}
 
 export const CartActionsSection = (props: CartActionsSectionProps) => {
-  const navigate = useNavigate();
-
-  const handlePlaceOrder = () => {
-    navigate('/order');
-  };
+  const handlePlaceOrder = useHandlePlaceOrder();
 
   return (
     <Section>
@@ -19,7 +16,7 @@ export const CartActionsSection = (props: CartActionsSectionProps) => {
             variant="link"
             size="lg"
             iconLeft={<FaArrowLeft />}
-            onClick={() => navigate(-1)}
+            onClick={() => window.history.back()}
           >
             Back
           </Button>
