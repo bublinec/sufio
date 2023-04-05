@@ -10,7 +10,7 @@ export const CartTableSection = (props: CartTableSectionProps) => {
   const cartTable = useMemo(() => getCartTable(cart), [cart]);
 
   return (
-    <Section header={{ title: 'Products', as: 'h1' }}>
+    <Section header={{ title: 'Cart', as: 'h1' }}>
       <Table {...cartTable} />
     </Section>
   );

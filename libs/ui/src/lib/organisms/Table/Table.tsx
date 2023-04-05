@@ -3,6 +3,7 @@ type Cell = string | number | JSX.Element;
 interface Column {
   key: string;
   align?: 'left' | 'center' | 'right';
+  width?: string;
 }
 
 interface Row {
@@ -21,7 +22,7 @@ export const Table = (props: TableProps) => {
   return (
     <div className={`w-full overflow-auto`}>
       <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-50">
+        <thead className="bg-light-gray">
           <tr>
             {columns.map((column) => (
               <th
@@ -36,7 +37,7 @@ export const Table = (props: TableProps) => {
             ))}
           </tr>
         </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
+        <tbody className="bg-white divide-y divide-gray-200 ">
           {data.map((row) => {
             return (
               <tr key={row.id}>
@@ -45,7 +46,7 @@ export const Table = (props: TableProps) => {
                     key={column.key}
                     className={`px-6 py-4 whitespace-nowrap text-sm text-gray-500 ${
                       column.align ? `text-${column.align}` : ''
-                    }`}
+                    } ${column.width ? column.width : ''}`}
                   >
                     {row[column.key]}
                   </td>

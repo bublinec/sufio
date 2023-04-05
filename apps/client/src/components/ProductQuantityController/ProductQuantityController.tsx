@@ -1,6 +1,6 @@
 import { NumberInput } from '@sufio/ui';
 import { useCartItem } from '../../lib/redux-store/hooks/useCartItem';
-import { useUpdateItemQuantity } from '../../lib/redux-store/hooks/useUpdateItemQuantity';
+import { useUpdateCartItemQuantity } from '../../lib/redux-store/hooks/useUpdateCartItemQuantity';
 
 export interface ProductQuantityControllerProps {
   productId: number;
@@ -11,15 +11,15 @@ export const ProductQuantityController = (
 ) => {
   const { productId } = props;
   const cartItem = useCartItem(productId);
-  const updateItemQuantity = useUpdateItemQuantity();
+  const updateCartItemQuantity = useUpdateCartItemQuantity();
 
   const handleChange = (value: number) => {
     if (!cartItem) return;
-    updateItemQuantity({ ...cartItem, quantity: value });
+    updateCartItemQuantity({ ...cartItem, quantity: value });
   };
 
   return (
-    <div className={``}>
+    <div className={`flex gap-1 items-center justify-center`}>
       <NumberInput
         name={`quantity-${productId}`}
         min={0}

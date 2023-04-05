@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { updateItemQuantity } from "../slices/cartSlice";
 
 // This hook is used to update the quantity of an item in the cart.
-export const useUpdateItemQuantity = () => {
+export const useUpdateCartItemQuantity = () => {
   const dispatch = useDispatch();
 
   return useCallback((cartItem: CartItem) => {

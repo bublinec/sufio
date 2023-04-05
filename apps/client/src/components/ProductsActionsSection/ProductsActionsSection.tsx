@@ -2,11 +2,9 @@ import { FaArrowRight } from '@react-icons/all-files/fa/FaArrowRight';
 import { Button, Section } from '@sufio/ui';
 import { Link } from 'react-router-dom';
 
-export interface ProductsNavigationSectionProps {}
+export interface ProductsActionsSectionProps {}
 
-export const ProductsNavigationSection = (
-  props: ProductsNavigationSectionProps
-) => {
+export const ProductsActionsSection = (props: ProductsActionsSectionProps) => {
   return (
     <Section>
       <div className="flex justify-end">

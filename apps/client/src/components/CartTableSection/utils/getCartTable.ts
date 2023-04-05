@@ -8,7 +8,7 @@ export const getCartTable = (cart: Cart): TableProps => {
     { key: 'Quantity', align: 'center' },
     { key: 'Unit Price incl. VAT', align: 'right' },
     { key: 'VAT', align: 'right' },
-    { key: 'Total', align: 'right' },
+    { key: 'Total', align: 'right', width: 'w-40' },
   ];
 
   const data = mapCartToTableData(cart);

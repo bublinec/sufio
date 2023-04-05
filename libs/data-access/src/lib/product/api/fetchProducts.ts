@@ -4,7 +4,7 @@ export const fetchProducts = async () => {
     const data = await response.json();
 
     // add tiemout to simulate api call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 200));
 
     return data;
   } catch (error) {
