@@ -6,7 +6,7 @@ interface Column {
 }
 
 interface Row {
-  id: string;
+  id: string | number;
   [key: string]: Cell;
 }
 
