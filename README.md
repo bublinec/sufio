@@ -5,6 +5,7 @@ App is live on the following link:
 https://sufio.vercel.app/
 
 Storybook can ba accessed here: 
+https://sufio-storybook.vercel.app/
 
 
 ## Development
