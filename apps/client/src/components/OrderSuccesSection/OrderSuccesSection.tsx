@@ -24,8 +24,8 @@ export const OrderSuccesSection = (props: OrderSuccesSectionProps) => {
           to our bitcoin address.
         </p>
 
-        <Link to="/products" className="w-full">
-          <Button size="lg" className="w-full">
+        <Link to="/products" className="w-full md:w-auto">
+          <Button size="lg" className="w-full md:w-auto">
             Continue shopping
           </Button>
         </Link>

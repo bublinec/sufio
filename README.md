@@ -17,3 +17,6 @@ Run `nx run ui:storybook` for storybook. Navigate to http://localhost:4400/.
 - **Redux** for managing global state
 - **React Query** for managing API data and caching
 - **React Router DOM** for client-side routing.
+
+# Dev Time
+Time tracked: 10:26 hours
