@@ -18,14 +18,16 @@ export const OrderSuccesSection = (props: OrderSuccesSectionProps) => {
         <div className="w-min">
           <Table {...orderTable} hideHeader />
         </div>
-        <p>
-          Please send us the pavment of{' '}
+        <p className="text-center">
+          Please send us the payment of{' '}
           <span className="text-2xl font-bold mx-1">{formatPrice(total)}</span>{' '}
           to our bitcoin address.
         </p>
 
-        <Link to="/products">
-          <Button size="lg">Continue shopping</Button>
+        <Link to="/products" className="w-full">
+          <Button size="lg" className="w-full">
+            Continue shopping
+          </Button>
         </Link>
       </div>
     </Section>

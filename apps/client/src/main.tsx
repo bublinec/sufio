@@ -15,14 +15,14 @@ const queryClient = new QueryClient({});
 
 root.render(
   <StrictMode>
-    <ToastProvider>
-      <QueryClientProvider client={queryClient}>
-        <Provider store={store}>
-          <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <BrowserRouter>
+          <ToastProvider>
             <App />
-          </BrowserRouter>
-        </Provider>
-      </QueryClientProvider>
-    </ToastProvider>
+          </ToastProvider>
+        </BrowserRouter>
+      </Provider>
+    </QueryClientProvider>
   </StrictMode>
 );

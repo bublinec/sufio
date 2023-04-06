@@ -14,6 +14,7 @@ export interface ButtonProps {
   iconRight?: ReactNode;
   variant?: 'solid' | 'outline' | 'link';
   size?: 'sm' | 'md' | 'lg';
+  className?: string;
 }
 
 const defaultStyles =
@@ -41,6 +42,7 @@ export const Button = (props: ButtonProps) => {
     iconRight,
     variant = 'solid',
     size = 'md',
+    className,
     ...buttonProps
   } = props;
 
@@ -51,6 +53,7 @@ export const Button = (props: ButtonProps) => {
     variant === 'outline' && outlineStyles,
     variant === 'link' && linkStyles,
     disabled && 'opacity-50 cursor-not-allowed',
+    className,
   ]);
 
   return (
